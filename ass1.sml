@@ -23,5 +23,21 @@ fun dates_in_months(x :(int*int*int)list,y:int)=
 			
 			
 	
-fun 
+fun dates_in_monthss(x :(int*int*int) list,y:int list)=
+    if null y	    
+    then []
+    else dates_in_months(x,hd y)@ dates_in_monthss(x,tl y)
+
+fun get_nth(s :string list,x:int)=
+    if x=1
+    then hd s
+    else get_nth(tl s,x -1)
+		
+
+		
+
+
+						  
+
+						
 
