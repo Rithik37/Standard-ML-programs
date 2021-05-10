@@ -40,13 +40,27 @@ fun date_to_string(x:int*int* int)=
 	get_nth(name_of_months,#2 x)^ " " ^ Int.toString(#3 x)^ ","^Int.toString(#1 x)
     end
 
+fun num_before_reaching_sum(sum :int,x : int list)=
+    if hd x >= sum
+    then 0
+    else 1+num_before_reaching_sum(sum- (hd x),tl x)
+
 	
-		
+fun what_month(x :int)=
+    let val y=[31,28,31,30,31,30,31,31,30,31,30,31]
+    in
+	1+num_before_reaching_sum(x,y)
+    end
 
-		
+fun month_range(x :int,y:int)=
+    if x>y
+    then []
+    else what_month(x)::month_range(x+1,y)
 
 
-						  
+				   
+
+	
 
 						
 
